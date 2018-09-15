@@ -1,18 +1,35 @@
 <template>
   <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <TheHeader />
+    <TheHero v-bind:inputText="inputData"/>
+    <input v-on:keyup="_onChange" class="text-input"></input>
   </div>
 </template>
 
 <script>
 // @ is an alias to /src
-import HelloWorld from '@/components/HelloWorld.vue';
 
+import TheHeader from '@/components/TheHeader.vue'
+import TheHero from '@/components/TheHero.vue';
 export default {
   name: 'home',
   components: {
-    HelloWorld,
+    TheHeader,
+    TheHero
   },
+  data() {
+    return {
+      inputData: ''
+    }
+  },
+  methods: {
+    _onChange: function() {
+      let typedText = document.querySelector('.text-input').value;
+      this.inputData = typedText;
+    },
+    _fetchShoes: function() {
+      console.log("hi, this is the fetch method");
+    }
+  }
 };
 </script>
