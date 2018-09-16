@@ -1,32 +1,18 @@
 <template>
   <div id="app">
-    <Home />
+    <TheHeader />
+    <router-view />
   </div>
 </template>
 
 <script>
-import Home from './views/Home.vue';
+import TheHeader from './components/TheHeader.vue'
+
 export default {
   name: 'App',
   components: {
-    Home
+    TheHeader,
   },
-  // data() {
-  //   return (
-  //     this.state.inputTitle
-  //   )
-  // },
-  // created: (() => {
-  //   this._fetchShoes();
-  // }),
-  // methods: {
-  //   _fetchShoes: (() => {
-  //
-  //   }),
-  //   _onChange: (() => {
-  //
-  //   })
-  // },
 };
 </script>
 
