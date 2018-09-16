@@ -5,8 +5,6 @@
       <p>The hot new app for learning gymnastics</p>
       <button type="button">PUSH</button>
       <p>{{ inputText }}</p>
-      <!-- <p>{data.a}</p>
-      <p>{data.b}</p> -->
     </section>
   </div>
 </template>
@@ -17,7 +15,7 @@ export default {
   methods: {
     _onClick: ((event) => {
       event.preventDefault();
-      if (event.target.tagName === 'H2') {
+      if (event.target.tagName === 'BUTTON') {
         let myH2 = document.querySelector('.myH2');
         if (myH2.style.color === 'green') {
           myH2.style.color = 'white';
